@@ -1,0 +1,14 @@
+name: Second
+
+on:
+  workflow_run:
+    workflows: ["First"]
+    branches: [main, chain]
+    types:
+      - completed
+
+jobs:
+  some-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Second commit started" && sleep 15 && echo "Second commit ended"

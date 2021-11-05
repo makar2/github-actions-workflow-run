@@ -1,0 +1,14 @@
+name: First
+
+on:
+  push:
+    branches:
+      - main
+      - chain
+      - try
+
+jobs:
+  some-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "First commit started" && sleep 15 && echo "First commit ended"
