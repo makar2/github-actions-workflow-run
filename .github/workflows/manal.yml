@@ -1,0 +1,12 @@
+name: Manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Hello World!
