@@ -1,0 +1,11 @@
+name: Caller
+
+on:
+  push:
+    branches:
+      - main
+      - called
+
+jobs:
+  some-job:
+    uses: makar2/poc-github-actions-flows/.github/workflows/call-me.yml@v1
