@@ -1,0 +1,14 @@
+name: My Precondition will fail
+
+on:
+  workflow_run:
+    workflows: [Precondition]
+    branches: [main, preconditioned]
+    types:
+      - completed
+
+jobs:
+  some-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo I don\'t give a damn!

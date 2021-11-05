@@ -1,14 +1,14 @@
-name: First
+name: Precondition
 
 on:
   push:
     branches:
       - main
-      - chain
+      - preconditioned
       - try
 
 jobs:
   some-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "First commit started" && sleep 10 && echo "First commit ended"
+      - run: error-provoker
