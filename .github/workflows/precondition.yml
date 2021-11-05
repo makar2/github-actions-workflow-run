@@ -11,4 +11,4 @@ jobs:
   some-job:
     runs-on: ubuntu-latest
     steps:
-      - run: error-provoker
+      - run: echo pass this time

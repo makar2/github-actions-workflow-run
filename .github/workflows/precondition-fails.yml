@@ -12,4 +12,5 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo I don\'t give a damn!
+      - uses: actions/checkout@v2
+      - run: cat branch-name.txt
