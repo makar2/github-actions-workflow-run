@@ -1,10 +1,22 @@
 name: Call Me
 
-on: workflow_call
+on:
+  workflow_call:
+    inputs:
+      echo_me:
+        type: string
+
+env:
+  THROUGH_COMMON_ENV: ${{ inputs.echo_me}}
 
 jobs:
   some-job:
     runs-on: ubuntu-latest
+    env:
+      THROUGH_JOB_ENV: ${{ inputs.echo_me}}
     steps:
       - uses: actions/checkout@v2
       - run: cat branch-name.txt
+      - run: echo ${{ inputs.echo_me }}
+      - run: echo $THROUGH_COMMON_ENV
+      - run: echo $THROUGH_JOB_ENV

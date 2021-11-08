@@ -1,5 +1,8 @@
 name: Caller
 
+env:
+  TEST_VARIABLE: 42
+
 on:
   push:
     branches:
@@ -8,4 +11,6 @@ on:
 
 jobs:
   some-job:
-    uses: makar2/poc-github-actions-flows/.github/workflows/call-me.yml@v1
+    uses: makar2/poc-github-actions-flows/.github/workflows/call-me.yml@main
+    with:
+      echo_me: hardcoded-value
