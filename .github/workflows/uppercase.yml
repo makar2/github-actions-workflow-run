@@ -13,4 +13,8 @@ jobs:
   some-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ env.MY_STRING.outputs.uppercase }}
+      - name: Uppercase from env directly
+        run: echo ${MY_STRING^^}
+
+      - name: Uppercase from env indirectly
+        run: echo ${${{ env.MY_STRING }}^^}
