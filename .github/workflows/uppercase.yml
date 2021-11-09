@@ -1,0 +1,16 @@
+name: First
+
+on:
+  push:
+    branches:
+      - main
+      - uppercase
+
+env:
+  MY_STRING: some lowercase text
+
+jobs:
+  some-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ env.MY_STRING.outputs.uppercase }}
